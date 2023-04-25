@@ -1,0 +1,24 @@
+{
+  "name": "schedule-cronjob-deploy",
+  "version": "1.0.0",
+  "description": "data scrapper automator, to be submitted by a cron job daily",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoslora/schedule-cronjob-deploy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcoslora/schedule-cronjob-deploy/issues"
+  },
+  "homepage": "https://github.com/marcoslora/schedule-cronjob-deploy#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "nodemailer": "^6.9.1"
+  }
+}
