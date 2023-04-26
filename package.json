@@ -19,6 +19,7 @@
   "homepage": "https://github.com/marcoslora/schedule-cronjob-deploy#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "node-fetch": "^2.6.9",
     "nodemailer": "^6.9.1"
   }
 }
