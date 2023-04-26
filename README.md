@@ -1,2 +1,2 @@
 # schedule-cronjob-deploy
- data scrapper automator, to be submitted by a cron job daily
+ Day weather, to be submitted by a cron job daily
