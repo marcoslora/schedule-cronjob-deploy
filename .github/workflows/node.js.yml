@@ -5,17 +5,16 @@ name: Schedule-cronjob-deploy
 
 on:
   schedule:
-  - cron: "0 20 * * *"
+    - cron: "0 20 * * *"
   workflow_dispatch:
 env:
   MAIL_USER_EMAIL: ${{ secrets.MAIL_USER_EMAIL}}
   MAIL_USER_PASSWORD: ${{ secrets.MAIL_USER_PASSWORD}}
   MAIL_TO: ${{ secrets.MAIL_TO}}
-  
+  ACCUWEATHER_API_KEY: ${{ secrets.ACCUWEATHER_API_KEY}}
 
 jobs:
   report:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -24,11 +23,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: node src/main.js
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      - run: node src/main.js
