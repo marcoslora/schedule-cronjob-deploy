@@ -5,7 +5,7 @@ name: Schedule-cronjob-deploy
 
 on:
   schedule:
-    - cron: "0 20 * * *"
+    - cron: "0 1 * * *"
   workflow_dispatch:
 env:
   MAIL_USER_EMAIL: ${{ secrets.MAIL_USER_EMAIL}}

@@ -21,7 +21,6 @@ const nodemailer = require("nodemailer");
   );
   const gifData = await gifResquest.json();
   const gif = gifData.results[0].media;
-  console.log(gif[0].tinygif.url);
 
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
