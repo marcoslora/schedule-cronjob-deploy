@@ -16,6 +16,12 @@ const nodemailer = require("nodemailer");
   const forecastData = await forecastRequest.json();
   const forecast = forecastData;
   const temperature = forecast.DailyForecasts[0].Temperature;
+  const gifResquest = await fetch(
+    `https://g.tenor.com/v1/random?q=weather&key=LIVDSRZULELA`
+  );
+  const gifData = await gifResquest.json();
+  const gif = gifData.results[0].media;
+  console.log(gif[0].tinygif.url);
 
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -38,6 +44,7 @@ const nodemailer = require("nodemailer");
     <p>Max: ${temperature.Maximum.Value}°C</p>
     <p>Media: ${
       (temperature.Minimum.Value + temperature.Maximum.Value) / 2
-    }°C</p>`, // html body
+    }°C</p>
+    <p><img src="${gif[0].tinygif.url}" /></p>`, // html body
   });
 })();
