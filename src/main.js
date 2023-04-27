@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
     `http://dataservice.accuweather.com/locations/v1/cities/DO/search?apikey=${process.env.ACCUWEATHER_API_KEY}&q=santo%20domingo`
   );
   const locationData = await locationRequest.json();
-  const locationKey = 125887;
+  const locationKey = locationData[0].Key;
 
   const forecastRequest = await fetch(
     `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${locationKey}?apikey=${process.env.ACCUWEATHER_API_KEY}&language=es&details=true&metric=true`
